@@ -1,6 +1,7 @@
 {
   // only used for typechecking
   "compilerOptions": {
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "esModuleInterop": true
   }
 }
