@@ -29,7 +29,7 @@ export default function TippyGenerator(tippy) {
     const isControlledMode = visible !== undefined;
     const isSingletonMode = singleton !== undefined;
 
-    const childrenRef = children.props.ref;
+    const childrenRef = children !== null ? children.props.ref : null;
 
     const [mounted, setMounted] = useState(false);
     const [attrs, setAttrs] = useState({});
@@ -228,7 +228,7 @@ export default function TippyGenerator(tippy) {
           ? cloneElement(children, {
               ref(node) {
                 mutableBox.ref = node;
-                preserveRef(childrenRef, node);
+                if (childrenRef) preserveRef(childrenRef, node);
               },
             })
           : null}
